@@ -41,3 +41,8 @@ const renderDrink = (drink) => {
 const grabCBtns = () => {
     document.querySelector('#citrus-btns').childNodes.forEach(childNode => { 
         childNode.addEventListener('click', function(){
+            removeDrinks()
+            getDrinks(childNode)
+        })
+    })
+}
