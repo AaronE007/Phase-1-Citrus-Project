@@ -9,8 +9,8 @@ const drinkCollection = document.querySelector('#drink-collection')
 const searchDrinks = (userInput) => {
     const url = baseUrlSearch + '?s=' + userInput
     console.log(url)
-    fetch(url)
-    .then(res => res.json())
-    .then(hash => hash['drinks'].forEach(drink => renderDrink(drink))) 
+      fetch(url)
+      .then(res => res.json())
+      .then(hash => hash['drinks'].forEach(drink => renderDrink(drink))) 
 
 }
