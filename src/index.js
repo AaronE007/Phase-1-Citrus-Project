@@ -21,3 +21,6 @@ const getDrinks = (childNode) => {
       .then(res => res.json())
       .then(hash => hash['drinks'].forEach(drink => renderDrink(drink))) 
 }
+const renderDrink = (drink) => {
+    const drinkCard = document.createElement('div')
+    drinkCard.className = "card"
