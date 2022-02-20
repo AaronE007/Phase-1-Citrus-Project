@@ -31,3 +31,9 @@ const renderDrink = (drink) => {
     const drinkImage = document.createElement('img')
     drinkImage.src = drink.strDrinkThumb
     drinkImage.className = "drink-image"
+
+    drinkCard.append(drinkName, drinkImage)
+
+    drinkCollection.append(drinkCard)
+
+}
