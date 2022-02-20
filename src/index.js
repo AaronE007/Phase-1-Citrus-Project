@@ -59,4 +59,11 @@ const removeDrinks = () => {
     document.querySelector("#search-btn").addEventListener('click', function (e){
         e.preventDefault()
         const input = document.getElementById("input-value").value
+          removeDrinks()
+          searchDrinks(input)
+    })
+}
   
+searchBtn()
+
+grabCBtns()
