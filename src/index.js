@@ -37,3 +37,7 @@ const renderDrink = (drink) => {
     drinkCollection.append(drinkCard)
 
 }
+
+const grabCBtns = () => {
+    document.querySelector('#citrus-btns').childNodes.forEach(childNode => { 
+        childNode.addEventListener('click', function(){
