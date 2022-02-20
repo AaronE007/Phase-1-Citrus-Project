@@ -14,3 +14,10 @@ const searchDrinks = (userInput) => {
       .then(hash => hash['drinks'].forEach(drink => renderDrink(drink))) 
 
 }
+
+const getDrinks = (childNode) => {
+    const url = baseUrlFilter + '?i=' + childNode.id
+      fetch(url)
+      .then(res => res.json())
+      .then(hash => hash['drinks'].forEach(drink => renderDrink(drink))) 
+}
