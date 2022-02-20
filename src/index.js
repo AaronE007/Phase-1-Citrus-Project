@@ -46,3 +46,10 @@ const grabCBtns = () => {
         })
     })
 }
+
+const removeDrinks = () => {
+    while (drinkCollection.firstChild) {
+      drinkCollection.removeChild(drinkCollection.lastChild);
+    }
+  }
+  
