@@ -24,3 +24,6 @@ const getDrinks = (childNode) => {
 const renderDrink = (drink) => {
     const drinkCard = document.createElement('div')
     drinkCard.className = "card"
+    
+    const drinkName = document.createElement('h2')
+    drinkName.innerText = drink.strDrink
