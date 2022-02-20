@@ -52,4 +52,11 @@ const removeDrinks = () => {
       drinkCollection.removeChild(drinkCollection.lastChild);
     }
   }
+
+  const userInput = document.querySelector('#input-value')
+
+  const searchBtn = () => {
+    document.querySelector("#search-btn").addEventListener('click', function (e){
+        e.preventDefault()
+        const input = document.getElementById("input-value").value
   
