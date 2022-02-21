@@ -11,8 +11,7 @@ const searchDrinks = (userInput) => {
       fetch(url)
       .then(res => res.json())
       .then(hash => hash['drinks'].forEach(drink => renderDrink(drink)))
-      .catch(error => renderNone())
-
+      .catch(_error => renderNone())
 }
 
 const getDrinks = (childNode) => {
