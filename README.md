@@ -12,6 +12,7 @@ Use this link in order to install a clone of the project onto your own machine f
 ```bash
 git@github.com:AaronE007/Phase-1-Citrus-Project.git
 ```
+Once you have cloned the project change directories into the project and type index.html into the terminal. 
 ## Usage
 
 Clicking on any of the ingredient buttons below will return the name and a jpeg of drinks that include those ingredients in their recipes: 
