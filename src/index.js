@@ -11,7 +11,8 @@ const searchDrinks = (userInput) => {
     console.log(url)
       fetch(url)
       .then(res => res.json())
-      .then(hash => hash['drinks'].forEach(drink => renderDrink(drink))) 
+      .then(hash => hash['drinks'].forEach(drink => renderDrink(drink)))
+      .catch(error => renderNone())
 
 }
 
@@ -62,6 +63,18 @@ const removeDrinks = () => {
           removeDrinks()
           searchDrinks(input)
     })
+}
+
+const renderNone = () => {
+    const errorCard= document.createElement('div')
+    errorCard.className = "card"
+
+    const drinkName = document.createElement('h2')
+    drinkName.innerText = "Error: No matching drinks!"
+
+    errorCard.append(drinkName)
+    drinkCollection.append(errorCard)
+
 }
   
 searchBtn()
