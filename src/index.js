@@ -3,8 +3,12 @@
 const baseUrlFilter = 'https://www.thecocktaildb.com/api/json/v1/1/filter.php'
 const baseUrlSearch = 'https://www.thecocktaildb.com/api/json/v1/1/search.php'
 
-const drinkCollection = document.querySelector('#drink-collection')
+const drinkCollection = document.querySelector('#drink-collection');
 
+document.addEventListener("DOMContentLoaded", () => {
+    searchBtn()
+    grabCBtns()
+});
 
 const searchDrinks = (userInput) => {
     const url = baseUrlSearch + '?s=' + userInput
@@ -12,14 +16,14 @@ const searchDrinks = (userInput) => {
       .then(res => res.json())
       .then(hash => hash['drinks'].forEach(drink => renderDrink(drink)))
       .catch(_error => renderNone())
-}
+};
 
 const getDrinks = (childNode) => {
     const url = baseUrlFilter + '?i=' + childNode.id
       fetch(url)
       .then(res => res.json())
       .then(hash => hash['drinks'].forEach(drink => renderDrink(drink))) 
-}
+};
 const renderDrink = (drink) => {
     const drinkCard = document.createElement('div')
     drinkCard.className = "card"
@@ -35,7 +39,7 @@ const renderDrink = (drink) => {
 
     drinkCollection.append(drinkCard)
 
-}
+};
 
 const grabCBtns = () => {
     document.querySelector('#citrus-btns').childNodes.forEach(childNode => { 
@@ -44,9 +48,10 @@ const grabCBtns = () => {
             getDrinks(childNode)
         })
     })
-}
+};
 
 const removeDrinks = () => {
+    //drinkCollection.textContent = ""
     while (drinkCollection.firstChild) {
       drinkCollection.removeChild(drinkCollection.lastChild);
     }
@@ -61,7 +66,7 @@ const removeDrinks = () => {
           removeDrinks()
           searchDrinks(input)
     })
-}
+};
 
 const renderNone = () => {
     const errorCard= document.createElement('div')
@@ -73,8 +78,4 @@ const renderNone = () => {
     errorCard.append(drinkName)
     drinkCollection.append(errorCard)
 
-}
-  
-searchBtn()
-
-grabCBtns()
+};
