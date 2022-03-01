@@ -85,9 +85,17 @@ const renderNone = () => {
 
 const changeColor = () => {
     const headers = document.querySelectorAll("h2") 
-    headers.forEach(header => header.style.color = "blue")
-}
+    headers.forEach(header =>{
+    
+        if (header.style.color == "blue") {
+            header.style.color = ""
+        }
 
+        else if (header.style.color == "") {
+            header.style.color = "blue"
+        }
+    })
+}
 const colorizeBtn = () =>{
    let colorBtn = document.querySelector('#colorize')
    colorBtn.style.display = "inline"
