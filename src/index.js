@@ -1,6 +1,7 @@
 //Varaibles
 
-const baseUrlFilter = 'https://www.thecocktaildb.com/api/json/v1/1/filter.php'
+
+var baseUrlFilter = 'https://www.thecocktaildb.com/api/json/v1/1/filter.php'
 const baseUrlSearch = 'https://www.thecocktaildb.com/api/json/v1/1/search.php'
 
 const drinkCollection = document.querySelector('#drink-collection');
@@ -23,6 +24,7 @@ const getDrinks = (childNode) => {
       fetch(url)
       .then(res => res.json())
       .then(hash => hash['drinks'].forEach(drink => renderDrink(drink))) 
+    colorizeBtn()
 };
 const renderDrink = (drink) => {
     const drinkCard = document.createElement('div')
@@ -34,6 +36,7 @@ const renderDrink = (drink) => {
     const drinkImage = document.createElement('img')
     drinkImage.src = drink.strDrinkThumb
     drinkImage.className = "drink-image"
+
 
     drinkCard.append(drinkName, drinkImage)
 
@@ -79,3 +82,18 @@ const renderNone = () => {
     drinkCollection.append(errorCard)
 
 };
+
+const changeColor = () => {
+    const headers = document.querySelectorAll("h2") 
+    headers.forEach(header => header.style.color = "blue")
+}
+
+const colorizeBtn = () =>{
+   let colorBtn = document.querySelector('#colorize')
+   colorBtn.style.display = "inline"
+   colorBtn.addEventListener('click', () =>{
+       changeColor()
+   })
+
+
+}
